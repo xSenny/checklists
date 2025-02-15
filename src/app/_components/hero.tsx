@@ -1,6 +1,7 @@
 "use client";
 //@ts-ignore
 import confetti from "canvas-confetti";
+import Link from "next/link";
 
 const HeroSection = () => {
   const handleClick = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <div className="hero w-full overflow-hidden bg-base-100 py-20">
-      <div className="hero-content w-full gap-20 flex-col-reverse lg:flex-row-reverse lg:justify-between">
+      <div className="hero-content w-full flex-col-reverse gap-20 lg:flex-row-reverse lg:justify-between">
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="card-title">Prepare for my trip</h2>
@@ -39,9 +40,9 @@ const HeroSection = () => {
                   <span className="label-text">{item}</span>
                   <input
                     onChange={(e) => {
-                        if (e.target.checked) {
-                            handleClick(e)
-                        }
+                      if (e.target.checked) {
+                        handleClick(e);
+                      }
                     }}
                     type="checkbox"
                     defaultChecked={Math.random() > 0.5}
@@ -62,8 +63,10 @@ const HeroSection = () => {
             your own.
           </p>
           <div className="flex flex-col gap-2">
-          <button className="btn btn-success">CREATE ME A LIST</button>
-          <button className="btn btn-ghost">I HAVE AN ACCOUNT</button>
+            <Link href="/welcome" className="flex">
+              <button className="btn btn-success w-full">CREATE ME A LIST</button>
+            </Link>
+            <button className="btn btn-ghost">I HAVE AN ACCOUNT</button>
           </div>
         </div>
       </div>

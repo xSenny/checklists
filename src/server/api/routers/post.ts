@@ -57,9 +57,6 @@ export const postRouter = createTRPCRouter({
       const post = await ctx.db.post.delete({
         where: { id: input.id, createdBy: { id: ctx.session.user.id } },
       });
-
-      revalidatePath('/')
-
       return post;
     }),
 });
