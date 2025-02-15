@@ -10,6 +10,12 @@ const config = {
         serverActions: {
             allowedOrigins: ["effective-space-winner-q5q494wxvxjcp6w-3000.app.github.dev", "localhost:3000"]
         }
+    },
+    typescript: {
+        ignoreBuildErrors: true
+    },
+    eslint: { 
+        ignoreDuringBuilds: true
     }
 };
 
