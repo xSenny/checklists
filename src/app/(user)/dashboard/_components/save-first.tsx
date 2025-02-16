@@ -11,7 +11,6 @@ const SaveFirstChecklist = () => {
       await utils.checklist.invalidate();
     },
   });
-  const [list] = api.checklist.getLists.useSuspenseQuery();
   const [savedList, setSavedList] = useState<{
     name: string;
     selectedItems: string[];
@@ -34,17 +33,6 @@ const SaveFirstChecklist = () => {
 
   return (
     <div>
-      {/* <button
-        className="btn"
-        onClick={() => {
-          const modal = document.getElementById("my_modal_2");
-          if (modal) {
-            (modal as HTMLDialogElement).showModal();
-          }
-        }}
-      >
-        open modal
-      </button> */}
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box flex flex-col items-center gap-6 text-center">
           <h3 className="text-3xl font-bold">Thank you for joining!</h3>
