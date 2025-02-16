@@ -160,3 +160,19 @@ export const listsIdeas = [
     ],
   },
 ];
+
+
+export const links = [
+  {
+    label: "Home",
+    href: "/dashboard",
+  },
+  {
+    label: "Your Checklists",
+    href: "/dashboard/list"
+  },
+  {
+    label: "Browse",
+    href: "/dashboard/browse"
+  }
+]

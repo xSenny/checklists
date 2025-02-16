@@ -3,23 +3,23 @@
 import confetti from "canvas-confetti";
 import Link from "next/link";
 
+export const handleClick = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  try {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    await confetti({
+      origin: {
+        x: x / window.innerWidth,
+        y: y / window.innerHeight,
+      },
+      zIndex: 99999999,
+    });
+  } catch (error) {
+    console.error("Confetti button error:", error);
+  }
+};
 const HeroSection = () => {
-  const handleClick = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("clicked");
-    try {
-      const rect = event.currentTarget.getBoundingClientRect();
-      const x = rect.left + rect.width / 2;
-      const y = rect.top + rect.height / 2;
-      await confetti({
-        origin: {
-          x: x / window.innerWidth,
-          y: y / window.innerHeight,
-        },
-      });
-    } catch (error) {
-      console.error("Confetti button error:", error);
-    }
-  };
 
   return (
     <div className="hero w-full overflow-hidden bg-base-100 py-20">
